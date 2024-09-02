@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {Link, useNavigate, useParams} from 'react-router-dom'
+import Navbar from './Navbar';
 function EditUser() {
   const navigate = useNavigate();
   const userData = {
@@ -31,15 +32,15 @@ function EditUser() {
   const submitForm = async(e) => {
     e.preventDefault();
     await axios.put(`http://localhost:8000/api/updateDetails/${id}`,user)
-    .then((response)=>{
+    .then(()=>{
       alert("user Updated successfully")
         navigate("/")
     }).catch(error => console.log(error))
   }
   return (
     <div>
-      <h1>Lets edit..</h1>
-      <Link className='bg-red-400 mt-2 ml-5' to={"/"}>Back</Link>
+      <Navbar />
+      <Link className='text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto p-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-2' to={"/"}>Back</Link>
     <form className="max-w-sm mx-auto mt-10" onSubmit={submitForm}>
       <h2>Update User</h2>
       <div className="mb-5">

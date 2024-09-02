@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import{ useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { Toaster, toast } from 'react-hot-toast'
+import Navbar from './Navbar'
 function AddUser() {
 
   const userData = {
@@ -32,6 +32,7 @@ function AddUser() {
   }
   return (
     <div>
+      <Navbar />
        <div className="flex justify-end">
       <Link className='bg-blue-400 text-white rounded p-2 mt-2 ml-5 mr-5 mb-5' to={"/"}>Back</Link>
     </div>
