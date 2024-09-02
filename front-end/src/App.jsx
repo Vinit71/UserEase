@@ -1,11 +1,9 @@
 import './index.css'
 import './App.css'
-
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import User from './Components/GetUser/User'
-import AddUser from './Components/RegisterUser/AddUser'
-import EditUser from './Components/UpdateUser/EditUser'
-import {Toaster, toast} from 'react-hot-toast'
+import User from './Components/User'
+import AddUser from './Components/AddUser'
+import EditUser from './Components/EditUser'
 
 function App() {
 
@@ -26,7 +24,6 @@ function App() {
 
   return (
     <>
-     {/* <h1>Hello</h1> */}
      <RouterProvider router={route}></RouterProvider>
     </>
   )
